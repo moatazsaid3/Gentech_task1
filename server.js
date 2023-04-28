@@ -12,7 +12,8 @@ const port = process.env.PORT;
 const uri = process.env.ATLAS_URI;
 
 const numberOfFakeProducts = process.env.numberOfFakeProducts;
-
+const Redis = require("redis");
+const redisClient = Redis.createClient();
 //app.use(cors());
 app.use(express.json());
 app.use(
