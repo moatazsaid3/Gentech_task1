@@ -2,20 +2,15 @@ const router = require("express").Router();
 const asyncHandler = require("express-async-handler");
 const pagination = require("../utilities/pagination");
 const productsModel = require("../models/products");
+const testfunction = require("../test/getRequest");
 
-router.post(
-  "/createProduct",
+router.get(
+  "/testProduct",
   [],
   asyncHandler(async (req, res) => {
     try {
-      let product = {
-        name: req.body.name,
-        seller: req.body.seller,
-        description: req.body.description,
-        price: req.body.price,
-      };
-      const respons = await productsModel.create(product);
-      res.json(respons);
+      console.log("hello");
+      res.json(testfunction());
     } catch (error) {}
   })
 );
