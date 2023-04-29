@@ -1,4 +1,6 @@
 const products = require("./getRequest");
+const testfunction = require("../test/getRequest");
+
 const expectedResult = {
   next: {
     page: 2,
@@ -58,6 +60,8 @@ const expectedResult = {
   ],
 };
 
-test("Get page 1 of products with a limit of 5", () => {
-  expect(products()).toBe(expectedResult);
+test("Get page 1 of products with a limit of 5", async () => {
+  expect(JSON.stringify(await testfunction(1, 5))).toBe(
+    JSON.stringify(expectedResult)
+  );
 });

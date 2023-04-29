@@ -5,6 +5,6 @@ async function getRequest(page, limit) {
     params: { page: page, limit: limit },
   });
 
-  return res;
+  return res.data;
 }
 module.exports = getRequest;
